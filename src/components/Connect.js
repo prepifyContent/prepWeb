@@ -1,6 +1,33 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 export default function Connect() {
+  const [imageVisible, setImageVisible] = useState(false);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setImageVisible(true);
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   // State for each input field
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -107,8 +134,12 @@ export default function Connect() {
         </div>
 
         <div className="flex-1 flex justify-center items-center">
-          <div className=" w-96">
-            <img src="/img/homePage.png" alt="Connect" />
+          <div
+            className="w-96 mr-16 mb-20 fade-in"
+            ref={imageRef}
+            style={{ opacity: imageVisible ? 1 : 0 }}
+          >
+            <img src="/img/connect.png" alt="Connect" />
           </div>
         </div>
       </div>
