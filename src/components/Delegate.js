@@ -3,29 +3,29 @@ import "./style.css";
 
 const imageDetails = [
   {
-    src: "/img/homePage.png",
+    src: "/img/image (10).png",
     heading: "Expert Content, Every time!",
     subheading:
       "Let the content experts work to ensure top tier content for you.",
   },
   {
-    src: "/img/homePage.png",
+    src: "/img/image (11).png",
     heading: "Focus on Course Success",
     subheading: "Get those examplary courses out there and make them a hit!",
   },
   {
-    src: "/img/homePage.png",
+    src: "/img/image (12).png",
     heading: "Skip the Hiring Hustle",
     subheading: "Just order top-notch content as and when you need it!",
   },
   {
-    src: "/img/homePage.png",
+    src: "/img/image (13).png",
     heading: "Strategize in Peace",
     subheading:
       "Strategy time, here you come! Allow yourself more headspace to plot your next big move.",
   },
   {
-    src: "/img/homePage.png",
+    src: "/img/image (14).png",
     heading: "Netflix & Actually Chill!",
     subheading:
       "Everyone deserves a break. Switch on the ‘zen’ mode for yourself now.",
@@ -95,11 +95,16 @@ export default function Delegate() {
                 isVisible[`item-${index}`] ? "visible" : ""
               }`}
             >
-              <img
-                src={item.src}
-                alt={`Description of ${item.heading}`}
-                className="w-80 mx-auto"
-              />
+              <div className=" w-52 h-52 mx-auto">
+                {" "}
+                {/* Adjust width (w-32) and height (h-20) as needed */}
+                <img
+                  src={item.src}
+                  alt={`Description of ${item.heading}`}
+                  className="w-full h-full object-cover mx-auto"
+                />
+              </div>
+
               <p className="font-semibold text-[#004AAD] text-xl">
                 {item.heading}
               </p>
@@ -122,11 +127,15 @@ export default function Delegate() {
               }`}
             >
               {" "}
-              <img
-                src={item.src}
-                alt={`Description of ${item.heading}`}
-                className="w-80 mx-auto"
-              />
+              <div className="w-52 h-52 mx-auto">
+                {" "}
+                {/* Adjust width (w-32) and height (h-20) as needed */}
+                <img
+                  src={item.src}
+                  alt={`Description of ${item.heading}`}
+                  className="w-full h-full object-cover mx-auto"
+                />
+              </div>
               <p className="font-semibold text-[#004AAD] text-xl">
                 {item.heading}
               </p>
