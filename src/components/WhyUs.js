@@ -3,15 +3,24 @@ import { useEffect, useState, useRef } from "react";
 
 function Box({ image, heading, subheading }) {
   return (
-    <div className="flex flex-row justify-start items-start border-2 border-black p-4 w-full h-48 overflow-hidden">
-      <img src={image} alt={heading} className="w-[30%]" />{" "}
+    <div className="flex flex-col md:flex-row justify-start items-center border-2 border-black p-4 w-full h-auto md:h-48 overflow-hidden">
+      <img
+        src={image}
+        alt={heading}
+        className="w-[35%] md:w-[30%] object-cover"
+      />
       <div className="flex flex-col justify-between m-4">
-        <h3 className="font-semibold text-[#004AAD] text-xl">{heading}</h3>
-        <p className="text-base font-normal text-[#B6B2B2]">{subheading}</p>
+        <h3 className="font-semibold text-[#004AAD] text-lg md:text-xl">
+          {heading}
+        </h3>
+        <p className="text-sm md:text-base font-normal text-[#B6B2B2]">
+          {subheading}
+        </p>
       </div>
     </div>
   );
 }
+
 export default function WhyUs() {
   const boxesRef = useRef([]);
   const [isVisible, setIsVisible] = useState({});
@@ -78,17 +87,17 @@ export default function WhyUs() {
   ];
 
   return (
-    <div className="h-screen pt-8 flex flex-col items-center">
-      <div className="text-center font-semibold text-4xl text-black mb-2">
+    <div className="h-auto md:h-screen pt-8 flex flex-col items-center px-4 md:px-0">
+      <div className="text-center font-semibold text-2xl md:text-4xl text-black mb-2">
         <span className="text-[#004AAD]">Why </span>
         Team Up with Prepify?
       </div>
-      <div className="text-lg font-normal text-[#B6B2B2] text-center mb-6">
+      <div className="text-base md:text-lg font-normal text-[#B6B2B2] text-center mb-3 px-2">
         Teaming up with Prepify is like finding a treasure trove in the content
         world.
         <br /> Ready for a fun ride through our top 6 reasons? Here we go!
       </div>
-      <div className="max-w-5xl mx-auto grid grid-cols-2">
+      <div className="max-w-full md:max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 ">
         {boxes.map((box, index) => (
           <div
             ref={(el) => (boxesRef.current[index] = el)}

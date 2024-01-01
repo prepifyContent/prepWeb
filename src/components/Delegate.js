@@ -74,19 +74,20 @@ export default function Delegate() {
     };
   }, []);
   return (
-    <div className="h-screen">
-      <div className="flex flex-col justify-start items-center h-full">
-        <div className="text-center font-semibold text-4xl text-black ">
-          <span className="text-[#004AAD]">Five Savvy Shifts:</span>
+    <div className="h-auto">
+      <div className="flex flex-col items-center justify-center h-full p-4 md:p-0">
+        <div className="text-center font-semibold text-2xl md:text-4xl text-black p-2">
+          <span className="text-blue-800">Five Savvy Shifts:</span>
           <br />
           Why Outsourcing Content is Genius
         </div>
-        <div className="text-lg font-normal text-[#B6B2B2] text-center ">
+        <div className="text-sm mb-8 md:text-lg text-gray-500 text-center p-2">
           Maximize impact, minimize effort. Unveil the power of expertly crafted
-          content and revolutionize your educational <br /> approach with 5 key
+          content and revolutionize your educational approach with 5 key
           strategies.
         </div>
-        <div className="grid grid-cols-3 gap-28 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+          {" "}
           {imageDetails.slice(0, 3).map((item, index) => (
             <div
               key={index}
@@ -95,9 +96,7 @@ export default function Delegate() {
                 isVisible[`item-${index}`] ? "visible" : ""
               }`}
             >
-              <div className=" w-52 h-52 mx-auto">
-                {" "}
-                {/* Adjust width (w-32) and height (h-20) as needed */}
+              <div className=" w-40 h-40 mx-auto">
                 <img
                   src={item.src}
                   alt={`Description of ${item.heading}`}
@@ -117,7 +116,7 @@ export default function Delegate() {
             </div>
           ))}
         </div>
-        <div className="grid grid-cols-2 gap-28 text-center mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-center mt-4">
           {imageDetails.slice(3, 5).map((item, index) => (
             <div
               key={index}
@@ -127,7 +126,7 @@ export default function Delegate() {
               }`}
             >
               {" "}
-              <div className="w-52 h-52 mx-auto">
+              <div className="w-40 h-40 mx-auto">
                 {" "}
                 {/* Adjust width (w-32) and height (h-20) as needed */}
                 <img
