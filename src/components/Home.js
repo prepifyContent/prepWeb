@@ -33,11 +33,13 @@ export default function Home() {
 
   return (
     <div>
-      <div className="fixed top-0 left-0 right-0 p-8 flex justify-between bg-B6B2B2 z-10">
-        <div className="text-3xl font-semibold text-[#004AAD] ">prepify</div>
+      <div
+        className="fixed top-0 left-0 right-0 p-8 flex justify-between 
+                    bg-white/30 backdrop-blur-md border-b border-white/20 shadow-md z-10"
+      >
+        <div className="text-3xl font-semibold text-[#004AAD]">prepify</div>
         <div className="text-base font-semibold text-[#004AAD]">ICONS</div>
       </div>
-
       <div className="h-10"></div>
 
       <div className="flex flex-col justify-start items-center h-auto">
